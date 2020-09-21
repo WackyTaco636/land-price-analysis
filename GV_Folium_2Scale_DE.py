@@ -5,11 +5,6 @@ import sqlite3
 import pandas as pd
 import json
 from folium.plugins import MarkerCluster
-import gmaps
-
-#gmaps.configure(api_key='AIzaSyALGoAHS3U5TtAmEsW_QunxP4sNgAr5Nls')
-#googleapi = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-
 
 conn = sqlite3.connect('''/home/chris/Documents/01_Projects/01_Grundstückvaluierung/01_Databases/GV_IN_DB_DE.sqlite''', timeout=3)
 cur = conn.cursor()
