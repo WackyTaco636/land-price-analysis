@@ -2,7 +2,7 @@ import sqlite3
 import pandas as pd
 
 ### API connection to the database containing all of the scraped offers
-conn = sqlite3.connect('''/home/ec2-user/land-price-analysis/land-price-analysis/GV_IN_DB_DE.sqlite''', timeout=3)
+conn = sqlite3.connect('''/home/ec2-user/land-price-analysis/GV_IN_DB_DE.sqlite''', timeout=3)
 cur = conn.cursor()
 ### Select all offer data located in the main table 'Ads' and create a Pandas DataFrom without NaNs
 tbl = cur.execute('''SELECT * FROM Ads''')
