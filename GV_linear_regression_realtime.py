@@ -4,7 +4,8 @@ import pandas as pd
 from sklearn import linear_model
 from sklearn.metrics import r2_score
 #####################################
-from GV_IN_DE_DataCleanse import df, dfk, dfc, zips, vlucnts
+from GV_IN_DE_DataCleanse import df, dfk, dfc, vlucnts
+#from GV_streamlit import zipcodes as zips
 #####################################
 
 ### Prepare the x and y parameters to train the model below (remember, we want to train the model not on all available postcodes but on the samples contained within a postcode)
