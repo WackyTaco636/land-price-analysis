@@ -3,7 +3,6 @@ import requests
 import folium
 import pandas as pd
 import json
-from folium.plugins import MarkerCluster
 #########################################
 from GV_IN_DE_DataCleanse import dfk
 #########################################
@@ -19,7 +18,7 @@ pivot2 = pivot[pivot['sqmprice'] >= 120.01 ]
 # print(pivot2['sqmprice'].min())
 
 ############## REMOVE UNECESSARY ZIP CODES ###############
-plzmap = '/home/chris/Documents/01_Projects/01_Grundstückvaluierung/03_Folium/01_Maps/plz-5stellig.geojson'
+plzmap = '/home/ec2-user/land-price-analysis/plz-5stellig.geojson'
 # load GeoJSON
 with open(plzmap, 'r') as jsonFile :
     data = json.load(jsonFile)
@@ -46,7 +45,7 @@ open('pivot1-5stellig_GV_DE.geojson', 'w').write(
     json.dumps(new_json, sort_keys=True, indent=4, separators=(',', ': '))
 )
 
-newplzmap1 = '/home/chris/Documents/01_Projects/01_Grundstückvaluierung/03_Folium/pivot1-5stellig_GV_DE.geojson'
+newplzmap1 = '/home/ec2-user/land-price-analysis/pivot1-5stellig_GV_DE.geojson'
 
 #### PIVOT 2 ####
 geozips = []
@@ -67,7 +66,7 @@ open('pivot2-5stellig_GV_DE.geojson', 'w').write(
     json.dumps(new_json, sort_keys=True, indent=4, separators=(',', ': '))
 )
 
-newplzmap2 = '/home/chris/Documents/01_Projects/01_Grundstückvaluierung/03_Folium/pivot2-5stellig_GV_DE.geojson'
+newplzmap2 = '/home/ec2-user/land-price-analysis/pivot2-5stellig_GV_DE.geojson'
 
 #print(newplzmap2)
 ############## CREATE FOLIUM MAP ###############
@@ -101,4 +100,4 @@ layer2 = folium.Choropleth(geo_data=newplzmap2,
 layer2.geojson.add_child(
     folium.features.GeoJsonTooltip(['plz'], style=style_function, labels=True))
 
-propmap.save('/home/chris/Documents/01_Projects/01_Grundstückvaluierung/03_Folium/00_Results/GV_DE.html')
+propmap.save('/home/ec2-user/land-price-analysis/GV_DE.html')
