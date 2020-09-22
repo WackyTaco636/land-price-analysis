@@ -16,10 +16,10 @@ dfc = dfc[(dfc['area'] > 100) | (dfc['price'] > 1000)].round()
 ### Create a list of available zip-codes based on the scraped data where there are at least two samples for linear regression
 vlucnts = dfc.zip.value_counts()
 
-sample_size = 3
+#sample_size = 3
 
 # 'sample_size' is defined in GV_streamlit.py as the slider bar.
 def zip_samples(sample_size) :
-    zips = list(vlucnts[vlucnts >= 3].index.sort_values())
+    zips = list(vlucnts[vlucnts >= sample_size].index.sort_values())
 
     return zips
