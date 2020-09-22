@@ -1,23 +1,14 @@
 #### This versions has no black postal codes ####
 import requests
 import folium
-import sqlite3
 import pandas as pd
 import json
 from folium.plugins import MarkerCluster
+#########################################
+from GV_IN_DE_DataCleanse import dfk
+#########################################
 
-conn = sqlite3.connect('''/home/chris/Documents/01_Projects/01_Grundstückvaluierung/01_Databases/GV_IN_DB_DE.sqlite''', timeout=3)
-cur = conn.cursor()
-
-query = conn.execute('''SELECT * From Ads''')
-cols = [column[0] for column in query.description]
-df = pd.DataFrame.from_records(data = query.fetchall(), columns = cols)
-
-df = df.loc[(df['marketingtype'] == 'Kauf')]
-
-
-
-pivot = df.pivot_table(index =['zip'],
+pivot = dfk.pivot_table(index =['zip'],
                        values =['sqmprice'],
                        aggfunc ='mean')
 # print(pivot.index)
