@@ -17,11 +17,11 @@ The decision to analyse land properties was a personal one, as my wife and I are
 
 The hypothesis is simple and threefold: 
 
-*Outside of large demand centres, offered property will be comparibly cheaper.
+a) *Outside of large demand centres, offered property will be comparibly cheaper.*
 
-*The price of a property is directly correlated to it's size and thus comparison using linear regression will provide a statistically reliable fair-price valuation.
+b) *The price of a property is directly correlated to it's size and thus comparison using linear regression will provide a statistically reliable fair-price valuation.*
 
-*The gradient of the linear regression (price vs size within a zip-code) will be different depending on the zip-code (i.e. you may pay 500 EUR more per additional square-metre of land in a zip-code near Berlin, but may pay less per additional square-metre elsewhere).  
+c) *The gradient of the linear regression (price vs size within a zip-code) will be different depending on the zip-code (i.e. you may pay 500 EUR more per additional square-metre of land in a zip-code near Berlin, but may pay less per additional square-metre elsewhere).*
 
 1.2) Methods of data gathering and statistical analysis
 
@@ -41,17 +41,17 @@ Some working files are written and stored on AWS that are not visible on the git
 
 There are 6 files required to run this app (1 main app, 3 micro-services, 1 database, and 1 geoJSON map-file).
 
-GV_streamlit.py -> The main app, which is the UI, that imports all micro-services required to visualize the data.
+**GV_streamlit.py** -> The main app, which is the UI, that imports all micro-services required to visualize the data.
 
-GV_IN_DB_DE.sqlite -> The database containing all of the scraped offers (for scraper, see: ...)
+**GV_IN_DB_DE.sqlite** -> The database containing all of the scraped offers (for scraper, see: ...)
 
-GV_IN_DE_DataCleanse.py -> Microservice that extracts and cleans the data from the sqlite3 database.
+**GV_IN_DE_DataCleanse.py** -> Microservice that extracts and cleans the data from the sqlite3 database.
 
-GV_Folium_2Scale_DE.py -> Microservice that generates a heat map of land prices per zipcode throughout Germany.
+**GV_Folium_2Scale_DE.py** -> Microservice that generates a heat map of land prices per zipcode throughout Germany.
 
-GV_linear_regression_realtime.py -> Microservice that runs a linear regression analysis on a selected zipcode.
+**GV_linear_regression_realtime.py** -> Microservice that runs a linear regression analysis on a selected zipcode.
 
-plz-5stellig.geojson -> A map of Germany containing all zipcodes in geoJSON format.
+**plz-5stellig.geojson** -> A map of Germany containing all zipcodes in geoJSON format.
 
 3) How to run it in AWS
 
@@ -68,6 +68,7 @@ plz-5stellig.geojson -> A map of Germany containing all zipcodes in geoJSON form
 4) Troubleshooting
 
 **No write permissions in the folder (necessary for app to work)**
+
 -> If the sreamlit app shows you a page with errorno13 concerning lack of write permissions, it's because the land-price-analysis folder appears not to contain writing permissions for ec2-user (note: the root user cannot and should not run python or streamlit commands). Check what the group permissions of the folder are with command: ls -l
 ->> The first column are the rights, the second the users, the third the user group land-price-analysis (to which ec2-user should belong). 
 ->>> If you notice that the permissions look very different to the description above, use the following external documentation: https://stackoverflow.com/questions/27611608/ec2-user-permissions
