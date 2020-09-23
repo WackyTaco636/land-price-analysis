@@ -13,7 +13,7 @@ In other words, instead of beginning negotiations based on the offerred price fo
 
 1.1) Assumptions and Hypothesis
 
-The decision to analyse land properties was a personal one, as my wife and I are interested in purchasing land in the countryside. The advantage that this dataset gives is simplicity for analysis. There are essentially 3 components of an offer being analysed: price, size (in square-metres) and geographic location (zip code).
+The decision to analyse land properties was a personal one, as my wife and I are interested in purchasing land in the countryside somewhere in eastern Germany. The advantage that this dataset gives is simplicity for analysis. There are essentially 3 components of an offer being analysed: price, size (in square-metres) and geographic location (zip code).
 
 The hypothesis is simple and threefold: 
 
