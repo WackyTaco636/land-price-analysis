@@ -26,6 +26,8 @@ The source of the data is the German real-estate platform immmonet.de. The sourc
 
 The data was scraped using a script written in Python with BeautifulSoup4 and regex (amongst other modules) to target the html on the offer pages (link to the scraper: https://github.com/WackyTaco636/Scrapers.git).
 
+The each sample (row of data representing an offer for land) is given a timestamp when it is scraped and stored in the database. The data policy is to gather as much as possible and to include historical data of properties that may not be available any more in the analysis as to increase the number of samples within a zip-code. Samples can be restricted by date if necessary (e.g. there is an economic crisis resulting in the plunge of land prices).
+
 The statistics used for the analysis is both desciptive and inferrential. Concerning the fair-price analysis of offers linear regression was chosen as the the method providing the best fit after experimenting with K Nearest Neighbors Regresssion, and Neural Networks. 
 
 The linear regression method is executed on a zip-code level in real-time (the user selects the postcode, the code runs the analyses on the data set). The results of the fair-price analysis of some zip-codes were unrealistic (e.g. fair-prices declining with increased size) due to very scattered samples located within a zip-code. To mitigate this two additional analyses were undertaken to inform the user of the validity of the data:
