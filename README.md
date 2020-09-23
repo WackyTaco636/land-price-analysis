@@ -42,18 +42,27 @@ Some working files are written and stored on AWS that are not visible on the git
 There are 6 files required to run this app (1 main app, 3 micro-services, 1 database, and 1 geoJSON map-file).
 
 GV_streamlit.py -> The main app, which is the UI, that imports all micro-services required to visualize the data.
-GV_IN_DB_DE.sqlite -> the database containing all of the scraped offers (for scraper, see: ...)
+
+GV_IN_DB_DE.sqlite -> The database containing all of the scraped offers (for scraper, see: ...)
+
 GV_IN_DE_DataCleanse.py -> Microservice that extracts and cleans the data from the sqlite3 database.
+
 GV_Folium_2Scale_DE.py -> Microservice that generates a heat map of land prices per zipcode throughout Germany.
+
 GV_linear_regression_realtime.py -> Microservice that runs a linear regression analysis on a selected zipcode.
+
 plz-5stellig.geojson -> A map of Germany containing all zipcodes in geoJSON format.
 
 3) How to run it in AWS
 
 -> On your local machine, open a terminal and navigate to the folder containing the .pem file for access.
+
 -> Connect to the ec2 instance via ssh (this is the current ssh login, but can change if e.g. another elastic IP is assigned to the instance): ssh -i "ChrisEC2.pem" ec2-user@ec2-35-179-72-37.eu-west-2.compute.amazonaws.com
+
 -> Once connected to the ec2 via ssh, if the github repository land-price-analysis has not been cloned yet, run the command: sudo git clone https://github.com/WackyTaco636/land-price-analysis.git
+
 -> If it has already been cloned, make sure you are using the most updated version by running following command: sudo git pull origin master.
+
 -> To run the streamlit application cd to the land-price-analysis folder in the ssh and run: streamlit run GV_streamlit.py
 
 4) Troubleshooting
