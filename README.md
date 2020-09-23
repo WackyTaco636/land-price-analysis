@@ -1,6 +1,6 @@
 # land-price-analysis
 
-*Imagine you are interested in a piece of land. Knowing how all the other plots of land are being offered in terms of price and size within a reasonable geographic area for comparison (e.g. within the same zip-code) will give you an advantage in negotiating a fair price.*
+*Imagine you are interested in a piece of land. Knowing how all the other plots of land are being offered in terms of price and size within a reasonable geographic area for comparison (e.g. within the same zip-code) will give you an indication whether that piece of land is overpriced or underpiced. If you go a step further and run linear regression analysis, you will be able to calculate the property's fair-price.*
 
 
 1) Introduction
