@@ -3,7 +3,7 @@
 *Imagine you are interested in a piece of land. Knowing how all the other plots of land are being offered in terms of price and size within a reasonable geographic area for comparison (e.g. within the same zip-code) will give you an indication whether that piece of land is overpriced or underpiced. If you go a step further and run linear regression analysis, you will be able to calculate the property's fair-price and use this to your advantage in price negotiations.*
 
 
-1) Introduction
+**1) Introduction**
 
 The land-price-analysis app is intended as both a showcase of my skills as a developer as well as a means to get a good overview and understanding of the German land-price-market as a whole all the way down to land-prices on a zip-code level. Python was used as the script language with SQL as the query language for the databases. 
 
@@ -11,7 +11,7 @@ Aside from providing graphical and statistical analysis to provide indications o
 
 In other words, instead of beginning negotiations based on the offerred price for the property, you will be able to enter negotiation for the price of that piece of land with a sound statistical approach.
 
-1.1) Assumptions and Hypothesis
+***1.1) Assumptions and Hypothesis***
 
 The decision to analyse land properties was a personal one, as my wife and I are interested in purchasing land in the countryside somewhere in eastern Germany. The advantage that this dataset gives is simplicity for analysis. There are essentially 3 components of an offer being analysed: price, size (in square-metres) and geographic location (zip code).
 
@@ -23,7 +23,7 @@ b) *The price of a property is directly correlated to it's size and thus compari
 
 c) *The gradient of the linear regression (price vs size within a zip-code) will be different depending on the zip-code (i.e. you may pay 500 EUR more per additional square-metre of land in a zip-code near Berlin, but may pay less per additional square-metre elsewhere).*
 
-1.2) Methods of data gathering and statistical analysis
+***1.2) Methods of data gathering and statistical analysis***
 
 The source of the data is the German real-estate platform immmonet.de. The source was selected as immonet.de provides the most online-listings for land in Germany.
 
@@ -31,13 +31,13 @@ The data was scraped using a script written in Python with BeautifulSoup4 and re
 
 The statistics used for the analysis is both desciptive and inferrential.
 
-2) Explanation of app architecture
+**2) Explanation of app architecture**
 
 The code-base is stored in the land-price-analysis repository on github and is executed on an AWS ec2 instance.
 The git repository is cloned to the instance (/home/ec2-user/land-price-analysis).
 Some working files are written and stored on AWS that are not visible on the git (these are files written by GV_Folium_2Scale_DE.py to generate the maps).
 
-2.1) Files making up the app
+***2.1) Files making up the app***
 
 There are 6 files required to run this app (1 main app, 3 micro-services, 1 database, and 1 geoJSON map-file).
 
@@ -53,7 +53,7 @@ There are 6 files required to run this app (1 main app, 3 micro-services, 1 data
 
 **plz-5stellig.geojson** -> A map of Germany containing all zipcodes in geoJSON format.
 
-3) How to run it in AWS
+**3) How to run it in AWS**
 
 -> On your local machine, open a terminal and navigate to the folder containing the .pem file for access.
 
@@ -65,9 +65,9 @@ There are 6 files required to run this app (1 main app, 3 micro-services, 1 data
 
 -> To run the streamlit application cd to the land-price-analysis folder in the ssh and run: streamlit run GV_streamlit.py
 
-4) Troubleshooting
+**4) Troubleshooting**
 
-**No write permissions in the folder (necessary for app to work)**
+***No write permissions in the folder (necessary for app to work)***
 
 If the sreamlit app shows you a page with errorno13 concerning lack of write permissions, it's because the land-price-analysis folder appears not to contain writing permissions for ec2-user (note: the root user cannot and should not run python or streamlit commands). Check what the group permissions of the folder are with command: ls -l
 The first column are the rights, the second the users, the third the user group land-price-analysis (to which ec2-user should belong). 
