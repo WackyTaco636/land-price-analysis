@@ -24,7 +24,7 @@ b) *The price of a property is directly correlated to it's size and thus compari
 
 The source of the data is the German real-estate platform immmonet.de. The source was selected as immonet.de provides the most online-listings for land in Germany.
 
-The data was scraped using a script written in Python with BeautifulSoup4 and regex (amongst other modules) to target the html on the offer pages.
+The data was scraped using a script written in Python with BeautifulSoup4 and regex (amongst other modules) to target the html on the offer pages (link to the scraper: https://github.com/WackyTaco636/Scrapers.git).
 
 The statistics used for the analysis is both desciptive and inferrential. Concerning the fair-price analysis of offers linear regression was chosen as the the method providing the best fit after experimenting with K Nearest Neighbors Regresssion, and Neural Networks. 
 
@@ -52,7 +52,7 @@ There are 6 files required to run this app (1 main app, 3 micro-services, 1 data
 
 **GV_streamlit.py** -> The main app, which is the UI, that imports all micro-services required to visualize the data.
 
-**GV_IN_DB_DE.sqlite** -> The database containing all of the scraped offers (for scraper, see: ...)
+**GV_IN_DB_DE.sqlite** -> The database containing all of the scraped offers (for scraper, see: https://github.com/WackyTaco636/Scrapers.git)
 
 **GV_IN_DE_DataCleanse.py** -> Microservice that extracts and cleans the data from the sqlite3 database.
 
