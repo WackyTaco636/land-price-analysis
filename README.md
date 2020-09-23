@@ -16,7 +16,7 @@ The decision to analyse land properties was a personal one, as my wife and I are
 
 The assumptions are simple and twofold: 
 
-a) *Outside of large demand centres (cities), offered property will be comparibly cheaper. The gradient of the linear regression (price vs size within a zip-code) will be different depending on the zip-code, i.e., you may pay 500 EUR more per additional square-metre of land in a zip-code near Berlin, but may pay less per additional square-metre elsewhere.**
+a) *Outside of large demand centres (cities), offered property will be comparibly cheaper. The gradient of the linear regression (price vs size within a zip-code) will be different depending on the zip-code, i.e., you may pay 500 EUR more per additional square-metre of land in a zip-code near Berlin, but may pay less per additional square-metre elsewhere.*
 
 b) *The price of a property is directly correlated to it's size and thus comparison using linear regression will a statistically reliable fair-price valuation.*
 
