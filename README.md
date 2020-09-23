@@ -69,6 +69,6 @@ There are 6 files required to run this app (1 main app, 3 micro-services, 1 data
 
 **No write permissions in the folder (necessary for app to work)**
 
--> If the sreamlit app shows you a page with errorno13 concerning lack of write permissions, it's because the land-price-analysis folder appears not to contain writing permissions for ec2-user (note: the root user cannot and should not run python or streamlit commands). Check what the group permissions of the folder are with command: ls -l
-->> The first column are the rights, the second the users, the third the user group land-price-analysis (to which ec2-user should belong). 
-->>> If you notice that the permissions look very different to the description above, use the following external documentation: https://stackoverflow.com/questions/27611608/ec2-user-permissions
+If the sreamlit app shows you a page with errorno13 concerning lack of write permissions, it's because the land-price-analysis folder appears not to contain writing permissions for ec2-user (note: the root user cannot and should not run python or streamlit commands). Check what the group permissions of the folder are with command: ls -l
+The first column are the rights, the second the users, the third the user group land-price-analysis (to which ec2-user should belong). 
+If you notice that the permissions look very different to the description above, use the following external documentation: https://stackoverflow.com/questions/27611608/ec2-user-permissions
