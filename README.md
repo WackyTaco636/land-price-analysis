@@ -67,7 +67,7 @@ There are 6 files required to run this app (1 main app, 3 micro-services, 1 data
 
 -> On your local machine, open a terminal and navigate to the folder containing the .pem file for access.
 
--> Connect to the ec2 instance via ssh (this is the current ssh login, but can change if e.g. another elastic IP is assigned to the instance): ssh -i "ChrisEC2.pem" ec2-user@ec2-35-179-72-37.eu-west-2.compute.amazonaws.com
+-> Connect to the ec2 instance via ssh (this is the current ssh login, but can change if e.g. another elastic IP is assigned to the instance): ssh -i "************" ec2-user@ec2-35-179-72-37.eu-west-2.compute.amazonaws.com
 
 -> Once connected to the ec2 via ssh, if the github repository land-price-analysis has not been cloned yet, run the command: sudo git clone https://github.com/WackyTaco636/land-price-analysis.git
 
