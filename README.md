@@ -9,7 +9,7 @@ The land-price-analysis app is intended as both a showcase of my skills as a dev
 
 Aside from providing graphical and statistical analysis to provide indications of where there is cheaper land to be bought, the main feature is the calculation of linear regression on properties on the zip code level, providing a fair-price valuation next to the offered amount posted online for that property.
 
-What benefit does this give the user? Imagine you are interested in a piece of land. Knowing how all the other plots of land are being offered in terms of price and size within a reasonable geographic area for comparison (e.g. within the same zip-code) will give you an advantage in negotiating a fair price.
+In other words, instead of beginning negotiations based on the offerred price for the property, you will be able to enter negotiation for the price of that piece of land with a sound statistical approach.
 
 1.1) Assumptions and Hypothesis
 
