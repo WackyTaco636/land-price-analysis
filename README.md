@@ -50,7 +50,7 @@ Some working files are written and stored on AWS that are not visible on the git
 
 ***3.1) App Code Base***
 
-There are 6 files required to run this app (1 main app, 3 micro-services, 1 database, and 1 geoJSON map-file).
+There are 6 files required to run this app (The main streamlit-app, 3 modules imported into the streamlit-app, 1 database, and 1 geoJSON map-file).
 
 **GV_streamlit.py** -> The main app, which is the UI, that imports all micro-services required to visualize the data.
 
