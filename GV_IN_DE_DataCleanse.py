@@ -35,4 +35,4 @@ def fed_summary(select_fed) :
     dfcf = dfcf.loc[:,['area','price']]
     dfcf['sqmprice'] = dfcf['price'] / dfcf['area']
     desc = dfcf.describe().round().astype(int)
-    return print(desc)
+    return desc
