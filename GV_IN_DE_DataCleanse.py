@@ -12,14 +12,29 @@ dfk = df[df['marketingtype'] == 'Kauf']
 # df = df[df['sqmprice'] > 10]
 dfc = dfk.loc[:,['offer','fed','zip','area','price']].dropna()
 dfc = dfc[(dfc['area'] > 100) | (dfc['price'] > 1000)].round()
-# dfc.to_csv('/home/chris/Documents/01_Projects/01_Grundstückvaluierung/04_Analysis/01_Data/dfc')
+
 ### Create a list of available zip-codes based on the scraped data where there are at least two samples for linear regression
 vlucnts = dfc.zip.value_counts()
 
+### Histogram of sqm land prices ### 
+sqmprice_vlucnts = dfc.sqmprice.value_counts().sort_index()
+# sqmprice_vlucnts = sqmprice_vlucnts.index.sort_values(ascending=False)
+sqmprice_vlucnts = sqmprice_vlucnts[(sqmprice_vlucnts > 0 ) & (sqmprice_vlucnts.index < 250)]
+print(sqmprice_vlucnts)
+
+hist_sqm_vals = []
+for key,val in sqmprice_vlucnts.items() :
+    # print(key,val)
+    for i in range(val) :
+        hist_sqm_vals.append(key)
+# print(x)
+
+plt.hist(hist_sqm_vals, bins = 10)
+hist_sqm =  plt.show()
+#################################
+
 feds = list(dfc.fed.sort_values(ascending=True).unique())
 feds = ['Overall (Nationwide)'] + feds
-
-#sample_size = 3
 
 # 'sample_size' is defined in GV_streamlit.py as the slider bar.
 def zip_samples(sample_size) :
