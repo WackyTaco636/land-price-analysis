@@ -9,10 +9,9 @@ cur = conn.cursor()
 tbl = cur.execute('''SELECT * FROM Ads''')
 cols = [column[0] for column in tbl.description]
 df = pd.DataFrame(tbl,columns=cols).round()
-dfk = df[df['marketingtype'] == 'Kauf']
-# df = df[df['sqmprice'] > 10]
-dfc = dfk.loc[:,['offer','fed','zip','area','price']].dropna()
-dfc = dfc[(dfc['area'] > 100) | (dfc['price'] > 1000)].round()
+dfk = df[(df['marketingtype'] == 'Kauf') & (df['price'] > 0)]
+
+dfc = dfk.loc[:,['offer','fed','zip','area','price','sqmprice']].dropna()
 
 ### Create a list of available zip-codes based on the scraped data where there are at least two samples for linear regression
 vlucnts = dfc.zip.value_counts()
