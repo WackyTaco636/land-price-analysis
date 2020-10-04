@@ -29,8 +29,8 @@ for key,val in sqmprice_vlucnts.items() :
         hist_sqm_vals.append(key)
 # print(x)
 
-plt.hist(hist_sqm_vals, bins = 10)
-hist_sqm =  plt.show()
+hist_sqm, ax = plt.subplots()
+ax.hist(hist_sqm_vals, bins = 10)
 #################################
 
 feds = list(dfc.fed.sort_values(ascending=True).unique())
