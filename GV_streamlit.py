@@ -4,12 +4,16 @@ import pandas as pd
 from pathlib import Path
 from streamlit_folium import folium_static
 ######################
-from GV_IN_DE_DataCleanse import df, dfk, dfc, vlucnts, feds, zip_samples, fed_summary
+from GV_IN_DE_DataCleanse import df, dfk, dfc, vlucnts, feds, zip_samples, fed_summary, hist_sqm
 from GV_Folium_2Scale_DE import propmap
 from GV_linear_regression_realtime import zipcode_analysis
 ######################
 
 st.title('Land Price Analysis of German Zip-Codes')
+
+st.write('Overall distribution of square-meter prices of land in Germany (capped at 250 EUR / sqm). Most land is offered in the range of 25 EUR - 50 EUR per square-meter.')
+
+st.pyplot(hist_sqm)
 
 st.write('Map generated from',len(df),'offers (Green: up to 120 EUR/m²; Red: above 120 EUR/m²)')
 
