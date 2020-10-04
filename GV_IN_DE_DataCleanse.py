@@ -1,5 +1,6 @@
 import sqlite3
 import pandas as pd
+import matplotlib.pyplot as plt
 
 ### API connection to the database containing all of the scraped offers
 conn = sqlite3.connect('''/home/ec2-user/land-price-analysis/GV_IN_DB_DE.sqlite''', timeout=3)
